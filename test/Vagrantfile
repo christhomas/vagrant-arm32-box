@@ -1,0 +1,19 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#
+# Test Vagrantfile for the Debian ARM32 Vagrant box.
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "christhomas/vagrant-arm32-box"
+  config.vm.box_architecture = "arm"
+  config.vm.box_check_update = false
+  config.vm.boot_timeout = 1800
+  config.vm.hostname = "debian-arm32"
+
+  config.vm.provider "qemu" do |qe|
+    qe.ssh_port = 50027
+    qe.ssh_auto_correct = true
+  end
+
+  config.vm.synced_folder ".", "/vagrant", type: "virtiofs"
+end

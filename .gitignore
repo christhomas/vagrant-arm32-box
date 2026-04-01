@@ -1,0 +1,16 @@
+# Build artifacts
+*.box
+*.img
+*.qcow2
+vmlinuz
+initrd.img
+mnt-root/
+
+# Vagrant
+.vagrant/
+
+# Build working directories
+work/
+.DS_Store
+.history
+test/shared/
